@@ -38,7 +38,7 @@ public class Tank {
         if (y>600) y=0;
         if (x<0) x=800;
         if (y<0) y=600;
-        switch (dir){
+        switch (this.dir){
             case LEFT:
                 x -= speed;
                 break;
