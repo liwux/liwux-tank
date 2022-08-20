@@ -5,13 +5,16 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TankFrame extends Frame {
 
-    private static final int GAME_WIDTH = 800,GAME_HEIGHT=600;
+    public static final int GAME_WIDTH = 800,GAME_HEIGHT=600;
 
     Tank myTank = new Tank(200,200,Dir.DOWN,this);
-    Bullet bullet = new Bullet(300,300,Dir.DOWN);
+
+    List<Bullet> bulletList = new ArrayList<>();
 
     public TankFrame() throws HeadlessException {
         setSize(GAME_WIDTH,GAME_HEIGHT);
@@ -47,9 +50,15 @@ public class TankFrame extends Frame {
 
     @Override
     public void paint(Graphics g) {
+        Color c = g.getColor();
+        g.setColor(Color.white);
+        g.drawString("子弹的数量："+ bulletList.size(),10,50);
+        g.setColor(c);
 
         myTank.paint(g);
-        bullet.paint(g);
+        for (int i=0;i<bulletList.size();i++){
+            bulletList.get(i).paint(g);
+        }
 
     }
 
