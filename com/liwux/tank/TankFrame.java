@@ -8,9 +8,7 @@ import java.awt.event.WindowEvent;
 
 public class TankFrame extends Frame {
 
-    int x =200,y=200;
-    Dir dir = Dir.DOWN;
-    private static final int speed = 10;
+    Tank myTank = new Tank(200,200,Dir.DOWN);
 
     public TankFrame() throws HeadlessException {
         setSize(800,600);
@@ -30,41 +28,10 @@ public class TankFrame extends Frame {
 
     @Override
     public void paint(Graphics g) {
-        g.fillRect(x,y,50,50);
-        if (x>800) x=0;
-        if (y>600) y=0;
-        if (x<0) x=800;
-        if (y<0) y=600;
-        switch (dir){
-            case LEFT:
-                x -= speed;
-                break;
-            case UP:
-                y -= speed;
-                break;
-            case RIGHT:
-                x += speed;
-                break;
-            case DOWN:
-                y += speed;
-                break;
-            case LEFT_UP:
-                x -= speed;
-                y -= speed;
-                break;
-            case LEFT_DOWN:
-                x -= speed;
-                y += speed;
-                break;
-            case RIGHT_UP:
-                x += speed;
-                y -= speed;
-                break;
-            case RIGHT_DOWN:
-                x += speed;
-                y += speed;
-                break;
-        }
+
+        myTank.paint(g);
+
+
     }
 
     class MykeyListener extends KeyAdapter{
@@ -120,14 +87,14 @@ public class TankFrame extends Frame {
         }
 
         private void setMainTankDir(){
-            if (lU) dir=Dir.LEFT;
-            if (uU) dir=Dir.UP;
-            if (rU) dir=Dir.RIGHT;
-            if (dU) dir=Dir.DOWN;
-            if(lU&&uU) dir = Dir.LEFT_UP;
-            if(rU&&uU) dir = Dir.RIGHT_UP;
-            if(lU&&dU) dir = Dir.LEFT_DOWN;
-            if(rU&&dU) dir = Dir.RIGHT_DOWN;
+            if (lU) myTank.setDir(Dir.LEFT);
+            if (uU) myTank.setDir(Dir.UP);
+            if (rU) myTank.setDir(Dir.RIGHT);
+            if (dU) myTank.setDir(Dir.DOWN);
+            if(lU&&uU) myTank.setDir(Dir.LEFT_UP);
+            if(rU&&uU) myTank.setDir(Dir.RIGHT_UP);
+            if(lU&&dU) myTank.setDir(Dir.LEFT_DOWN);
+            if(rU&&dU) myTank.setDir(Dir.RIGHT_DOWN);
         }
     }
 }
