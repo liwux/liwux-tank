@@ -29,13 +29,26 @@ public class TankFrame extends Frame {
     @Override
     public void paint(Graphics g) {
         g.fillRect(x,y,50,50);
-        x += 10;
-        //y += 10;
     }
 
     class MykeyListener extends KeyAdapter{
         @Override
         public void keyPressed(KeyEvent e) {
+            int key = e.getKeyCode();
+            switch(key){
+                case KeyEvent.VK_LEFT:
+                    x -=10;
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    x +=10;
+                    break;
+                case KeyEvent.VK_UP:
+                    y -=10;
+                    break;
+                case KeyEvent.VK_DOWN:
+                    y +=10;
+                    break;
+            }
             //System.out.println("key press");
         }
 
