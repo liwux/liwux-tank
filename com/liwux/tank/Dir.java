@@ -4,5 +4,9 @@ public enum Dir {
     LEFT,
     RIGHT,
     UP,
-    DOWN
+    DOWN,
+    LEFT_UP,
+    LEFT_DOWN,
+    RIGHT_UP,
+    RIGHT_DOWN
 }

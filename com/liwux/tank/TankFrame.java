@@ -31,6 +31,10 @@ public class TankFrame extends Frame {
     @Override
     public void paint(Graphics g) {
         g.fillRect(x,y,50,50);
+        if (x>800) x=0;
+        if (y>600) y=0;
+        if (x<0) x=800;
+        if (y<0) y=600;
         switch (dir){
             case LEFT:
                 x -= speed;
@@ -42,6 +46,22 @@ public class TankFrame extends Frame {
                 x += speed;
                 break;
             case DOWN:
+                y += speed;
+                break;
+            case LEFT_UP:
+                x -= speed;
+                y -= speed;
+                break;
+            case LEFT_DOWN:
+                x -= speed;
+                y += speed;
+                break;
+            case RIGHT_UP:
+                x += speed;
+                y -= speed;
+                break;
+            case RIGHT_DOWN:
+                x += speed;
                 y += speed;
                 break;
         }
@@ -104,6 +124,10 @@ public class TankFrame extends Frame {
             if (uU) dir=Dir.UP;
             if (rU) dir=Dir.RIGHT;
             if (dU) dir=Dir.DOWN;
+            if(lU&&uU) dir = Dir.LEFT_UP;
+            if(rU&&uU) dir = Dir.RIGHT_UP;
+            if(lU&&dU) dir = Dir.LEFT_DOWN;
+            if(rU&&dU) dir = Dir.RIGHT_DOWN;
         }
     }
 }
