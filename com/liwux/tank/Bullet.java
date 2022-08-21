@@ -4,13 +4,13 @@ import java.awt.*;
 
 public class Bullet {
     private int x,y;
-    private Dir dir;
+    private final Dir dir;
     private static final int speed = 10;
     private static final int WIDTH =10,HEIGHT=10;
 
     private boolean live = true;
 
-    TankFrame tankFrame = null;
+    private final TankFrame tankFrame;
 
     public Bullet(int x, int y, Dir dir,TankFrame tankFrame) {
         this.x = x;
@@ -41,6 +41,22 @@ public class Bullet {
                 x += speed;
                 break;
             case DOWN:
+                y += speed;
+                break;
+            case LEFT_UP:
+                x -= speed;
+                y -= speed;
+                break;
+            case LEFT_DOWN:
+                x -= speed;
+                y += speed;
+                break;
+            case RIGHT_UP:
+                x += speed;
+                y -= speed;
+                break;
+            case RIGHT_DOWN:
+                x += speed;
                 y += speed;
                 break;
         }

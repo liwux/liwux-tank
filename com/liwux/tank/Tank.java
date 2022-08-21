@@ -7,7 +7,7 @@ public class Tank {
     private Dir dir = Dir.DOWN;
     private static final int speed = 10;
 
-    private TankFrame tf=null;
+    private final TankFrame tf;
 
     private boolean moving = false;
 
