@@ -1,3 +1,5 @@
 **/.gitignore
 .idea
+.gitignore
+.out
 liwux-tank.iml

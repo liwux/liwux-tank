@@ -9,13 +9,15 @@ public class Bullet {
     public static int bulletWidth = ResourceMgr.bulletD.getWidth();
     public static int bulletHeight = ResourceMgr.bulletD.getHeight();
     private boolean live = true;
+    private Group group = Group.BAD;
 
     private final TankFrame tankFrame;
 
-    public Bullet(int x, int y, Dir dir,TankFrame tankFrame) {
+    public Bullet(int x, int y, Dir dir,Group group,TankFrame tankFrame) {
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.group = group;
         this.tankFrame = tankFrame;
     }
     public void paint(Graphics g){
@@ -87,6 +89,9 @@ public class Bullet {
     }
 
     public void collideWith(Tank tank) {
+        if (this.group == tank.getGroup())return;
+
+        //TODO: 用一个rect来记录当前位置
         Rectangle rectangle1 = new Rectangle(this.x,this.y,bulletWidth,bulletHeight);
         Rectangle rectangle2 = new Rectangle(tank.getX(),tank.getY(), Tank.tankWidth,Tank.tankHeight);
         if (rectangle1.intersects(rectangle2)){

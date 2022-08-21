@@ -1,26 +1,32 @@
 package com.liwux.tank;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Tank {
     private int x,y;
     private Dir dir = Dir.DOWN;
-    private static final int speed = 10;
+    private static final int speed = 5;
 
     private final TankFrame tf;
 
-    private boolean moving = false;
+    private boolean moving = true;
 
     private boolean live = true;
+
+    private Random random = new Random();
+
+    private Group group = Group.BAD;
 
     public static int tankWidth = ResourceMgr.tankD.getWidth();
     public static int tankHeight = ResourceMgr.tankD.getHeight();
 
-    public Tank(int x, int y,Dir dir,TankFrame tf) {
+    public Tank(int x, int y,Dir dir,Group group,TankFrame tf) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.tf = tf;
+        this.group = group;
     }
 
     public int getX() {
@@ -39,6 +45,13 @@ public class Tank {
         this.y = y;
     }
 
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 
     public void setDir(Dir dir) {
         this.dir = dir;
@@ -122,12 +135,14 @@ public class Tank {
                 y += speed;
                 break;
         }
+
+        if (random.nextInt(10)>8) this.fire();
     }
 
     public void fire(){
         int bX = this.x + tankWidth/2 - Bullet.bulletWidth/2;
         int bY = this.y + tankHeight/2 - Bullet.bulletHeight/2;
-        tf.bulletList.add(new Bullet(bX,bY,this.dir,this.tf));
+        tf.bulletList.add(new Bullet(bX,bY,this.dir,this.group,this.tf));
     }
 
     public void die() {
