@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a578e06-a4ae-4848-b27b-84ca08d74916" name="Changes" comment="子弹超出边界自动删除子弹">
-      <change afterPath="$PROJECT_DIR$/out/production/liwux-tank/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/liwux-tank/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/liwux-tank/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/liwux-tank/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame$MykeyListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/ImageTest.java" afterDir="false" />
+    <list default="true" id="3a578e06-a4ae-4848-b27b-84ca08d74916" name="Changes" comment="junit测试，从硬盘上读取图片">
+      <change afterPath="$PROJECT_DIR$/com/liwux/tank/ResourceMgr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liwux-tank.iml" beforeDir="false" afterPath="$PROJECT_DIR$/liwux-tank.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/liwux/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ImageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +54,7 @@
     "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ImageTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.liwux.tank.Main" />
       <module name="liwux-tank" />
@@ -107,8 +101,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ImageTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ImageTest" />
         <item itemvalue="JUnit.ImageTest.test" />
       </list>
     </recent_temporary>
@@ -122,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1660954923779</updated>
       <workItem from="1660954925163" duration="22266000" />
-      <workItem from="1661042308253" duration="3415000" />
+      <workItem from="1661042308253" duration="6346000" />
     </task>
     <task id="LOCAL-00001" summary="练习项目">
       <created>1660962093876</created>
@@ -229,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661012189161</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="junit测试，从硬盘上读取图片">
+      <created>1661051606190</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1661051606190</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +262,17 @@
     <MESSAGE value="增加子弹" />
     <MESSAGE value="fire一颗子弹" />
     <MESSAGE value="子弹超出边界自动删除子弹" />
-    <option name="LAST_COMMIT_MESSAGE" value="子弹超出边界自动删除子弹" />
+    <MESSAGE value="junit测试，从硬盘上读取图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="junit测试，从硬盘上读取图片" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
