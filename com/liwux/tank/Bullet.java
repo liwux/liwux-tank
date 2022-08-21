@@ -22,10 +22,32 @@ public class Bullet {
         if (!live) {
             tankFrame.bulletList.remove(this);
         }
-        Color c = g.getColor();
-        g.setColor(Color.red);
-        g.fillOval(x,y,WIDTH,HEIGHT);
-        g.setColor(c);
+        switch (dir){
+            case LEFT:
+                g.drawImage(ResourceMgr.bulletL,x,y,null);
+                break;
+            case RIGHT:
+                g.drawImage(ResourceMgr.bulletR,x,y,null);
+                break;
+            case UP:
+                g.drawImage(ResourceMgr.bulletU,x,y,null);
+                break;
+            case DOWN:
+                g.drawImage(ResourceMgr.bulletD,x,y,null);
+                break;
+            case LEFT_UP:
+                g.drawImage(ResourceMgr.bulletLU,x,y,null);
+                break;
+            case LEFT_DOWN:
+                g.drawImage(ResourceMgr.bulletLD,x,y,null);
+                break;
+            case RIGHT_UP:
+                g.drawImage(ResourceMgr.bulletRU,x,y,null);
+                break;
+            case RIGHT_DOWN:
+                g.drawImage(ResourceMgr.bulletRD,x,y,null);
+                break;
+        }
         move();
     }
 
