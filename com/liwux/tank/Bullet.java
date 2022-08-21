@@ -86,4 +86,16 @@ public class Bullet {
         if (x<0 || y <0 || x> TankFrame.GAME_WIDTH || y>TankFrame.GAME_HEIGHT) live = false;
     }
 
+    public void collideWith(Tank tank) {
+        Rectangle rectangle1 = new Rectangle(this.x,this.y,bulletWidth,bulletHeight);
+        Rectangle rectangle2 = new Rectangle(tank.getX(),tank.getY(), Tank.tankWidth,Tank.tankHeight);
+        if (rectangle1.intersects(rectangle2)){
+            tank.die();
+            this.die();
+        }
+    }
+
+    private void die() {
+        this.live = false;
+    }
 }

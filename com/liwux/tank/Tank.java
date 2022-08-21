@@ -11,6 +11,8 @@ public class Tank {
 
     private boolean moving = false;
 
+    private boolean live = true;
+
     public static int tankWidth = ResourceMgr.tankD.getWidth();
     public static int tankHeight = ResourceMgr.tankD.getHeight();
 
@@ -20,6 +22,23 @@ public class Tank {
         this.dir = dir;
         this.tf = tf;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
 
     public void setDir(Dir dir) {
         this.dir = dir;
@@ -34,6 +53,9 @@ public class Tank {
     }
 
     public void paint(Graphics g){
+        if (!live) {
+            tf.tankList.remove(this);
+        };
         switch (dir){
             case LEFT:
                 g.drawImage(ResourceMgr.tankL,x,y,null);
@@ -106,5 +128,9 @@ public class Tank {
         int bX = this.x + tankWidth/2 - Bullet.bulletWidth/2;
         int bY = this.y + tankHeight/2 - Bullet.bulletHeight/2;
         tf.bulletList.add(new Bullet(bX,bY,this.dir,this.tf));
+    }
+
+    public void die() {
+        this.live = false;
     }
 }
