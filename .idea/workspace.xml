@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a578e06-a4ae-4848-b27b-84ca08d74916" name="Changes" comment="fixed当tank在斜方向子弹不移动的问题">
+    <list default="true" id="3a578e06-a4ae-4848-b27b-84ca08d74916" name="Changes" comment="bullet替换图片">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/liwux/tank/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/liwux/tank/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/ResourceMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/liwux/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1660954923779</updated>
       <workItem from="1660954925163" duration="22266000" />
-      <workItem from="1661042308253" duration="8038000" />
+      <workItem from="1661042308253" duration="10095000" />
     </task>
     <task id="LOCAL-00001" summary="练习项目">
       <created>1660962093876</created>
@@ -241,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661055989365</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="bullet替换图片">
+      <created>1661056601021</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1661056601021</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +285,8 @@
     <MESSAGE value="junit测试，从硬盘上读取图片" />
     <MESSAGE value="替换坦克图片" />
     <MESSAGE value="fixed当tank在斜方向子弹不移动的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed当tank在斜方向子弹不移动的问题" />
+    <MESSAGE value="bullet替换图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="bullet替换图片" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
