@@ -10,14 +10,14 @@ import java.util.List;
 
 public class TankFrame extends Frame {
 
-    public static final int GAME_WIDTH = 800,GAME_HEIGHT=600;
+    public static final int GAME_WIDTH = 1080,GAME_HEIGHT=960;
 
     Tank myTank = new Tank(200,400,Dir.DOWN,Group.GOOD,this);
 
     List<Bullet> bulletList = new ArrayList<>();
 
     List<Tank> tankList = new ArrayList<>();
-
+    List<Explode> explodeList = new ArrayList<>();
     Explode e = new Explode(100,100,this);
 
     public TankFrame() throws HeadlessException {
@@ -58,6 +58,7 @@ public class TankFrame extends Frame {
         g.setColor(Color.white);
         g.drawString("子弹的数量："+ bulletList.size(),10,50);
         g.drawString("敌人的数量："+ tankList.size(),10,80);
+        g.drawString("爆炸的数量："+ explodeList.size(),10,100);
 
         g.setColor(c);
 
@@ -68,7 +69,9 @@ public class TankFrame extends Frame {
 
         for (int i=0;i<tankList.size();i++){
             tankList.get(i).paint(g);
-
+        }
+        for (int i=0;i<explodeList.size();i++){
+            explodeList.get(i).paint(g);
         }
 
         for (int i=0;i<bulletList.size();i++){
@@ -76,8 +79,6 @@ public class TankFrame extends Frame {
                 bulletList.get(i).collideWith(tankList.get(j));
             }
         }
-
-        e.paint(g);
 
     }
 

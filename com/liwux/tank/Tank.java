@@ -135,6 +135,7 @@ public class Tank {
                 y += speed;
                 break;
         }
+        //new Thread(()->new Audio("audio/tank_move.wav").play()).start();
 
         if (random.nextInt(10)>8) this.fire();
     }
@@ -143,6 +144,7 @@ public class Tank {
         int bX = this.x + tankWidth/2 - Bullet.bulletWidth/2;
         int bY = this.y + tankHeight/2 - Bullet.bulletHeight/2;
         tf.bulletList.add(new Bullet(bX,bY,this.dir,this.group,this.tf));
+        new Thread(()->new Audio("audio/tank_fire.wav").play()).start();
     }
 
     public void die() {

@@ -9,6 +9,8 @@ public class Main {
             tankFrame.tankList.add(new Tank(50+i*60,200,Dir.DOWN,Group.BAD,tankFrame));
         }
 
+        //new Thread(()->new Audio("audio/war1.wav").loop()).start();
+
         while (true){
             Thread.sleep(50);
             tankFrame.repaint();
