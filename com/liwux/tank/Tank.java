@@ -118,26 +118,17 @@ public class Tank {
             case DOWN:
                 y += speed;
                 break;
-            case LEFT_UP:
-                x -= speed;
-                y -= speed;
-                break;
-            case LEFT_DOWN:
-                x -= speed;
-                y += speed;
-                break;
-            case RIGHT_UP:
-                x += speed;
-                y -= speed;
-                break;
-            case RIGHT_DOWN:
-                x += speed;
-                y += speed;
-                break;
         }
         //new Thread(()->new Audio("audio/tank_move.wav").play()).start();
 
-        if (random.nextInt(10)>8) this.fire();
+        if (this.group==Group.BAD&&random.nextInt(10)>8)
+            this.fire();
+        randomMove();
+    }
+
+    private void randomMove() {
+        if (this.group==Group.BAD)
+            this.dir = Dir.values()[random.nextInt(4)];
     }
 
     public void fire(){
