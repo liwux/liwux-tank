@@ -21,12 +21,16 @@ public class Tank {
     public static int tankWidth = ResourceMgr.badTankD.getWidth();
     public static int tankHeight = ResourceMgr.badTankD.getHeight();
 
+    Rectangle rectangle = new Rectangle();
+
     public Tank(int x, int y,Dir dir,Group group,TankFrame tf) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.tf = tf;
         this.group = group;
+        rectangle.x = this.x;
+        rectangle.y = this.y;
     }
 
     public int getX() {
@@ -104,10 +108,14 @@ public class Tank {
         }
         //new Thread(()->new Audio("audio/tank_move.wav").play()).start();
 
+
         if (this.group==Group.BAD&&random.nextInt(100)>95)
             this.fire();
         randomMove();
         boundsChecks();
+
+        rectangle.x=this.x;
+        rectangle.y=this.y;
     }
 
     private void boundsChecks() {

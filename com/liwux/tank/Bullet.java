@@ -13,12 +13,18 @@ public class Bullet {
 
     private final TankFrame tankFrame;
 
+    Rectangle rectangle = new Rectangle();
+
     public Bullet(int x, int y, Dir dir,Group group,TankFrame tankFrame) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
         this.tankFrame = tankFrame;
+        rectangle.x = this.x;
+        rectangle.y = this.y;
+        rectangle.width = bulletWidth;
+        rectangle.height = bulletHeight;
     }
     public void paint(Graphics g){
         if (!live) {
@@ -67,34 +73,16 @@ public class Bullet {
             case DOWN:
                 y += speed;
                 break;
-            case LEFT_UP:
-                x -= speed;
-                y -= speed;
-                break;
-            case LEFT_DOWN:
-                x -= speed;
-                y += speed;
-                break;
-            case RIGHT_UP:
-                x += speed;
-                y -= speed;
-                break;
-            case RIGHT_DOWN:
-                x += speed;
-                y += speed;
-                break;
         }
-
+        rectangle.x = this.x;
+        rectangle.y = this.y;
         if (x<0 || y <0 || x> TankFrame.GAME_WIDTH || y>TankFrame.GAME_HEIGHT) live = false;
     }
 
     public void collideWith(Tank tank) {
         if (this.group == tank.getGroup())return;
 
-        //TODO: 用一个rect来记录当前位置
-        Rectangle rectangle1 = new Rectangle(this.x,this.y,bulletWidth,bulletHeight);
-        Rectangle rectangle2 = new Rectangle(tank.getX(),tank.getY(), Tank.tankWidth,Tank.tankHeight);
-        if (rectangle1.intersects(rectangle2)){
+         if (rectangle.intersects(tank.rectangle)){
             tank.die();
             this.die();
             int eX = tank.getX()+Tank.tankWidth/2-Explode.bulletWidth/2;
