@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b35b8ca2-5874-4586-a290-c33a50fb1f83" name="Changes" comment="增加图片素材">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b35b8ca2-5874-4586-a290-c33a50fb1f83" name="Changes" comment="增加音效和爆炸效果">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liwux-tank.iml" beforeDir="false" afterPath="$PROJECT_DIR$/liwux-tank.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/liwux/tank/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/liwux/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/liwux/tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame$MykeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame$MykeyListener.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,11 +48,71 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="应用程序.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="子弹和坦克区分敌我">
+      <created>1661070365451</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661070365451</updated>
+    </task>
+    <task id="LOCAL-00002" summary="子弹和坦克区分敌我">
+      <created>1661070379019</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661070379019</updated>
+    </task>
+    <task id="LOCAL-00003" summary="画出爆炸">
+      <created>1661087560046</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661087560046</updated>
+    </task>
+    <task id="LOCAL-00004" summary="画出爆炸">
+      <created>1661087572829</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661087572829</updated>
+    </task>
+    <task id="LOCAL-00005" summary="画出爆炸">
+      <created>1661088664705</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661088664705</updated>
+    </task>
+    <task id="LOCAL-00006" summary="增加音效和爆炸效果">
+      <created>1661097869595</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661097869595</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="子弹和坦克区分敌我" />
+    <MESSAGE value="画出爆炸" />
+    <MESSAGE value="增加音效和爆炸效果" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加音效和爆炸效果" />
   </component>
 </project>

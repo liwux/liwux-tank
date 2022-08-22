@@ -18,8 +18,8 @@ public class Tank {
 
     private Group group = Group.BAD;
 
-    public static int tankWidth = ResourceMgr.tankD.getWidth();
-    public static int tankHeight = ResourceMgr.tankD.getHeight();
+    public static int tankWidth = ResourceMgr.badTankD.getWidth();
+    public static int tankHeight = ResourceMgr.badTankD.getHeight();
 
     public Tank(int x, int y,Dir dir,Group group,TankFrame tf) {
         this.x = x;
@@ -71,16 +71,16 @@ public class Tank {
         };
         switch (dir){
             case LEFT:
-                g.drawImage(ResourceMgr.tankL,x,y,null);
+                g.drawImage(this.group == Group.GOOD? ResourceMgr.goodTankL:ResourceMgr.badTankL,x,y,null);
                 break;
             case RIGHT:
-                g.drawImage(ResourceMgr.tankR,x,y,null);
+                g.drawImage(this.group == Group.GOOD? ResourceMgr.goodTankR:ResourceMgr.badTankR,x,y,null);
                 break;
             case UP:
-                g.drawImage(ResourceMgr.tankU,x,y,null);
+                g.drawImage(this.group == Group.GOOD? ResourceMgr.goodTankU:ResourceMgr.badTankU,x,y,null);
                 break;
             case DOWN:
-                g.drawImage(ResourceMgr.tankD,x,y,null);
+                g.drawImage(this.group == Group.GOOD? ResourceMgr.goodTankD:ResourceMgr.badTankD,x,y,null);
                 break;
         }
         move();
@@ -88,10 +88,6 @@ public class Tank {
 
     private void move(){
         if (!moving) return;
-        if (x>800) x=0;
-        if (y>600) y=0;
-        if (x<0) x=800;
-        if (y<0) y=600;
         switch (this.dir){
             case LEFT:
                 x -= speed;
@@ -111,6 +107,15 @@ public class Tank {
         if (this.group==Group.BAD&&random.nextInt(100)>95)
             this.fire();
         randomMove();
+        boundsChecks();
+    }
+
+    private void boundsChecks() {
+        if (this.x <5 ) this.x = 5;
+        if (this.y < 28) this.y = 28;
+        if (this.x > this.tf.getWidth()-Tank.tankWidth-2) x= tf.getWidth()-Tank.tankWidth-2;
+        if (this.y > this.tf.getHeight()-Tank.tankHeight-2) y= tf.getHeight()-Tank.tankHeight-2;
+
     }
 
     private void randomMove() {

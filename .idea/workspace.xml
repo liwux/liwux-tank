@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b35b8ca2-5874-4586-a290-c33a50fb1f83" name="Changes" comment="增加音效和爆炸效果">
+    <list default="true" id="b35b8ca2-5874-4586-a290-c33a50fb1f83" name="Changes" comment="坦克美化，区分敌我">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/liwux/tank/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/ResourceMgr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/liwux/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/liwux/tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/TankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liwux-tank.iml" beforeDir="false" afterPath="$PROJECT_DIR$/liwux-tank.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/ResourceMgr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/ResourceMgr.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame$MykeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame$MykeyListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/images/1.gif" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,9 +119,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661131095891</updated>
-      <workItem from="1661131097480" duration="5293000" />
+      <workItem from="1661131097480" duration="7306000" />
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed 敌方坦克随机方向">
+      <created>1661145415567</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661145415567</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +149,8 @@
     <MESSAGE value="子弹和坦克区分敌我" />
     <MESSAGE value="画出爆炸" />
     <MESSAGE value="增加音效和爆炸效果" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加音效和爆炸效果" />
+    <MESSAGE value="fixed 敌方坦克随机方向" />
+    <MESSAGE value="坦克美化，区分敌我" />
+    <option name="LAST_COMMIT_MESSAGE" value="坦克美化，区分敌我" />
   </component>
 </project>
