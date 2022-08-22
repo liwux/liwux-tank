@@ -1,10 +1,12 @@
 package com.liwux.tank;
 
+import java.util.Objects;
+
 public class Main {
     public static void main(String[] arg) throws InterruptedException {
         TankFrame tankFrame = new TankFrame();
 
-        int initTankCount = Integer.parseInt((String)PropertyMgr.get("initTankCount"));
+        int initTankCount = Integer.parseInt((String) Objects.requireNonNull(PropertyMgr.get("initTankCount")));
 
         //初始化地方坦克
         for (int i=0;i<initTankCount;i++){
