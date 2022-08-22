@@ -6,6 +6,13 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class ResourceMgr {
+
+    private static final ResourceMgr INSTANCE = new ResourceMgr();
+    private ResourceMgr(){}
+
+    public static ResourceMgr getInstance(){
+        return INSTANCE;
+    }
     public static BufferedImage badTankL,badTankR,badTankU,badTankD;
     public static BufferedImage goodTankL,goodTankR,goodTankU,goodTankD;
 
