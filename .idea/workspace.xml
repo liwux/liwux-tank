@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b35b8ca2-5874-4586-a290-c33a50fb1f83" name="Changes" comment="测试读取配置">
-      <change afterPath="$PROJECT_DIR$/com/liwux/tank/PropertyMgr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/liwux/tank/config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/liwux/tank/PropertyMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/PropertyMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Bullet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Bullet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Bullet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +136,7 @@
       <workItem from="1661159648585" duration="66000" />
       <workItem from="1661160075566" duration="286000" />
       <workItem from="1661160376073" duration="645000" />
-      <workItem from="1661161630971" duration="4656000" />
+      <workItem from="1661161630971" duration="4843000" />
     </task>
     <task id="LOCAL-00007" summary="fixed 敌方坦克随机方向">
       <created>1661145415567</created>
@@ -161,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661162710968</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="测试读取配置">
+      <created>1661172532049</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1661172532049</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

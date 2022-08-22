@@ -8,7 +8,7 @@ public class PropertyMgr {
 
     static {
         try {
-            props.load(PropertyMgr.class.getClassLoader().getResourceAsStream("config"));
+            props.load(PropertyMgr.class.getClassLoader().getResourceAsStream("./config"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -21,7 +21,7 @@ public class PropertyMgr {
 
 
     public static void main(String[] args) {
-        //System.out.println(PropertyMgr.get("initTankCount"));
+        System.out.println(PropertyMgr.get("initTankCount"));
     }
 
 }
