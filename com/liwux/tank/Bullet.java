@@ -43,18 +43,6 @@ public class Bullet {
             case DOWN:
                 g.drawImage(ResourceMgr.bulletD,x,y,null);
                 break;
-            case LEFT_UP:
-                g.drawImage(ResourceMgr.bulletLU,x,y,null);
-                break;
-            case LEFT_DOWN:
-                g.drawImage(ResourceMgr.bulletLD,x,y,null);
-                break;
-            case RIGHT_UP:
-                g.drawImage(ResourceMgr.bulletRU,x,y,null);
-                break;
-            case RIGHT_DOWN:
-                g.drawImage(ResourceMgr.bulletRD,x,y,null);
-                break;
         }
         move();
     }
@@ -80,14 +68,12 @@ public class Bullet {
     }
 
     public void collideWith(Tank tank) {
-        if (this.group == tank.getGroup())return;
-
-         if (rectangle.intersects(tank.rectangle)){
+        if (this.group == tank.getGroup()) return;
+        if (rectangle.intersects(tank.rectangle)){
             tank.die();
             this.die();
             int eX = tank.getX()+Tank.tankWidth/2-Explode.bulletWidth/2;
             int eY = tank.getY()+Tank.tankHeight/2-Explode.bulletHeight/2;
-
             tankFrame.explodeList.add(new Explode(eX,eY,tankFrame));
         }
     }

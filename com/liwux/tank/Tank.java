@@ -31,6 +31,8 @@ public class Tank {
         this.group = group;
         rectangle.x = this.x;
         rectangle.y = this.y;
+        rectangle.width= tankWidth;
+        rectangle.height=tankHeight;
     }
 
     public int getX() {
