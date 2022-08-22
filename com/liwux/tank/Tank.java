@@ -82,19 +82,6 @@ public class Tank {
             case DOWN:
                 g.drawImage(ResourceMgr.tankD,x,y,null);
                 break;
-            case LEFT_UP:
-                g.drawImage(ResourceMgr.tankLU,x,y,null);
-                break;
-            case LEFT_DOWN:
-                g.drawImage(ResourceMgr.tankLD,x,y,null);
-                break;
-            case RIGHT_UP:
-                g.drawImage(ResourceMgr.tankRU,x,y,null);
-                break;
-            case RIGHT_DOWN:
-                g.drawImage(ResourceMgr.tankRD,x,y,null);
-                break;
-
         }
         move();
     }
@@ -121,13 +108,13 @@ public class Tank {
         }
         //new Thread(()->new Audio("audio/tank_move.wav").play()).start();
 
-        if (this.group==Group.BAD&&random.nextInt(10)>8)
+        if (this.group==Group.BAD&&random.nextInt(100)>95)
             this.fire();
         randomMove();
     }
 
     private void randomMove() {
-        if (this.group==Group.BAD)
+        if (this.group==Group.BAD && random.nextInt(100)>95)
             this.dir = Dir.values()[random.nextInt(4)];
     }
 

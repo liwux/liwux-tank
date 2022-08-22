@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b35b8ca2-5874-4586-a290-c33a50fb1f83" name="Changes" comment="增加音效和爆炸效果">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/liwux/tank/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/liwux/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/liwux/tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/liwux/tank/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/liwux-tank.iml" beforeDir="false" afterPath="$PROJECT_DIR$/liwux-tank.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/Tank.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame$MykeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame$MykeyListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/liwux-tank/com/liwux/tank/TankFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,13 +27,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://C:/Program Files/Java/jdk1.8.0_231/src.zip!/java/awt/Frame.java" root0="SKIP_INSPECTION" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectId" id="2DgqV2F28Hj3afUKgRyZtVUegyW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/code/liwux-tank"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.liwux.tank.Main" />
@@ -48,10 +67,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="应用程序.Main" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="子弹和坦克区分敌我">
       <created>1661070365451</created>
@@ -95,8 +115,18 @@
       <option name="project" value="LOCAL" />
       <updated>1661097869595</updated>
     </task>
+    <task active="true" id="Default" summary="默认任务">
+      <created>1661131095891</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661131095891</updated>
+      <workItem from="1661131097480" duration="5293000" />
+    </task>
     <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

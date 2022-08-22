@@ -79,7 +79,6 @@ public class TankFrame extends Frame {
                 bulletList.get(i).collideWith(tankList.get(j));
             }
         }
-
     }
 
     class MykeyListener extends KeyAdapter{
