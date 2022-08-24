@@ -1,10 +1,12 @@
 package com.liwux.tank;
 
+import com.liwux.tank.abstractfactory.BaseTank;
+
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
-public class Tank {
+public class Tank extends BaseTank {
     int x,y;
     Dir dir = Dir.DOWN;
     private static final int speed = 5;

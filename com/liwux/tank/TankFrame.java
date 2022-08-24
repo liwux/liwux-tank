@@ -1,5 +1,9 @@
 package com.liwux.tank;
 
+import com.liwux.tank.abstractfactory.BaseExplode;
+import com.liwux.tank.abstractfactory.DefaultFactory;
+import com.liwux.tank.abstractfactory.GameFactory;
+
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -17,8 +21,10 @@ public class TankFrame extends Frame {
     List<Bullet> bulletList = new ArrayList<>();
 
     List<Tank> tankList = new ArrayList<>();
-    List<Explode> explodeList = new ArrayList<>();
+    List<BaseExplode> explodeList = new ArrayList<>();
     Explode e = new Explode(100,100,this);
+
+    GameFactory gameFactory = new DefaultFactory();
 
     public TankFrame() throws HeadlessException {
         setSize(GAME_WIDTH,GAME_HEIGHT);

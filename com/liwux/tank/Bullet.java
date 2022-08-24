@@ -1,8 +1,10 @@
 package com.liwux.tank;
 
+import com.liwux.tank.abstractfactory.BaseBullet;
+
 import java.awt.*;
 
-public class Bullet {
+public class Bullet extends BaseBullet {
     int x,y;
     Dir dir;
     private static final int speed = 10;
@@ -26,6 +28,7 @@ public class Bullet {
         rectangle.width = bulletWidth;
         rectangle.height = bulletHeight;
     }
+    @Override
     public void paint(Graphics g){
         if (!live) {
             tankFrame.bulletList.remove(this);
@@ -74,7 +77,7 @@ public class Bullet {
             this.die();
             int eX = tank.getX()+Tank.tankWidth/2-Explode.bulletWidth/2;
             int eY = tank.getY()+Tank.tankHeight/2-Explode.bulletHeight/2;
-            tankFrame.explodeList.add(new Explode(eX,eY,tankFrame));
+            tankFrame.explodeList.add(tankFrame.gameFactory.createExplode(eX,eY,tankFrame));
         }
     }
 
