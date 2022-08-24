@@ -1,6 +1,7 @@
 package com.liwux.tank;
 
 import java.awt.*;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 public class Tank {
@@ -35,6 +36,25 @@ public class Tank {
         rectangle.y = this.y;
         rectangle.width= tankWidth;
         rectangle.height=tankHeight;
+
+        if (group ==Group.BAD) {
+            String badFS = (String) PropertyMgr.get("badFS");
+            try {
+                fs = (FireStrategy) Class.forName(badFS).getDeclaredConstructor().newInstance();
+            } catch (InstantiationException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            fs = new RandomFire();
+        }
     }
 
     public int getX() {
