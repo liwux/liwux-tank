@@ -3,15 +3,15 @@ package com.liwux.tank;
 import java.awt.*;
 
 public class Bullet {
-    private int x,y;
-    private final Dir dir;
+    int x,y;
+    Dir dir;
     private static final int speed = 10;
     public static int bulletWidth = ResourceMgr.bulletD.getWidth();
     public static int bulletHeight = ResourceMgr.bulletD.getHeight();
     private boolean live = true;
-    private Group group = Group.BAD;
+    Group group = Group.BAD;
 
-    private final TankFrame tankFrame;
+    final TankFrame tankFrame;
 
     Rectangle rectangle = new Rectangle();
 

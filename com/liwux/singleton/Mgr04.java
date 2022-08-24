@@ -5,9 +5,7 @@ package com.liwux.singleton;
  */
 public class Mgr04 {
     private static Mgr04 INSTANCE;
-
     private Mgr04(){}
-
     public static synchronized Mgr04 getInstance(){
         if (INSTANCE == null){
             try {
@@ -24,14 +22,8 @@ public class Mgr04 {
         for (int i=0;i<100;i++){
             new Thread(()->{
                 System.out.println(Mgr04.getInstance().hashCode());
-            }).start();
 
-//            new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    System.out.println(Mgr03.getInstance().hashCode());
-//                }
-//            }).start();
+            }).start();
         }
     }
 }

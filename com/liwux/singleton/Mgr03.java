@@ -7,8 +7,8 @@ import java.util.Objects;
  */
 public class Mgr03 {
     private static Mgr03 INSTANCE;
-
-    private Mgr03(){}
+    private Mgr03(){
+    }
 
     public static Mgr03 getInstance(){
         if (INSTANCE == null){
@@ -27,13 +27,6 @@ public class Mgr03 {
             new Thread(()->{
                 System.out.println(Mgr03.getInstance().hashCode());
             }).start();
-
-//            new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    System.out.println(Mgr03.getInstance().hashCode());
-//                }
-//            }).start();
         }
     }
 }
