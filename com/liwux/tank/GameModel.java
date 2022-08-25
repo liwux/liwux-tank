@@ -1,6 +1,4 @@
-package com.liwux.tank60.tank;
-
-import com.liwux.tank60.tank.abstractfactory.BaseExplode;
+package com.liwux.tank;
 
 import java.awt.*;
 import java.util.ArrayList;

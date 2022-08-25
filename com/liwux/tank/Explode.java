@@ -1,32 +1,29 @@
 package com.liwux.tank;
 
-import com.liwux.tank.abstractfactory.BaseExplode;
-
 import java.awt.*;
 
-public class Explode extends BaseExplode {
+public class Explode extends GameObject{
 
 
     public static int bulletWidth = ResourceMgr.explodes[0].getWidth();
     public static int bulletHeight = ResourceMgr.explodes[0].getHeight();
     private int x,y;
-    TankFrame tankFrame =null;
+    GameModel gameModel =null;
 
     private int step = 0;
 
-    public Explode(int x, int y, TankFrame tankFrame) {
+    public Explode(int x, int y, GameModel gameModel) {
         this.x = x;
         this.y = y;
-        this.tankFrame = tankFrame;
+        this.gameModel = gameModel;
 
         new Thread(()->new Audio("audio/explode.wav").play()).start();
     }
 
-    @Override
     public void paint(Graphics g){
         g.drawImage(ResourceMgr.explodes[step++],x,y,null);
         if (step >= ResourceMgr.explodes.length)
-            tankFrame.explodeList.remove(this);
+            gameModel.explodeList.remove(this);
 
     }
 }

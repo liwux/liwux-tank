@@ -1,4 +1,8 @@
-package com.liwux.tank60.tank;
+package com.liwux.tank.strategy;
+
+import com.liwux.tank.Bullet;
+import com.liwux.tank.Dir;
+import com.liwux.tank.Tank;
 
 import java.util.Random;
 
@@ -11,6 +15,6 @@ public class RandomFire implements FireStrategy {
         for (Dir dir: Dir.values()){
             new Bullet(bX,bY,dir,tank.group,tank.gameModel);
         }
-        new Thread(()->new Audio("audio/tank_fire.wav").play()).start();
+        //new Thread(()->new Audio("audio/tank_fire.wav").play()).start();
     }
 }

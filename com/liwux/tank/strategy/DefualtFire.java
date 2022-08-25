@@ -1,4 +1,7 @@
-package com.liwux.tank60.tank;
+package com.liwux.tank.strategy;
+
+import com.liwux.tank.Bullet;
+import com.liwux.tank.Tank;
 
 public class DefualtFire implements FireStrategy {
 
@@ -7,6 +10,6 @@ public class DefualtFire implements FireStrategy {
         int bX = tank.x + Tank.tankWidth/2 - Bullet.bulletWidth/2;
         int bY = tank.y + Tank.tankHeight/2 - Bullet.bulletHeight/2;
         new Bullet(bX,bY,tank.dir,tank.group,tank.gameModel);
-        new Thread(()->new Audio("audio/tank_fire.wav").play()).start();
+        //new Thread(()->new Audio("audio/tank_fire.wav").play()).start();
     }
 }

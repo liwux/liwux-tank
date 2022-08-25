@@ -1,16 +1,18 @@
 package com.liwux.tank.abstractfactory;
 
-import com.liwux.tank.*;
+import com.liwux.tank.Dir;
+import com.liwux.tank.Group;
+import com.liwux.tank.TankFrame;
 
-public class DefaultFactory extends GameFactory{
+public class DefaultFactory extends GameFactory {
     @Override
     public BaseTank createTank(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
-        return new Tank(x,y,dir,group,tankFrame);
+        return null;
     }
 
     @Override
     public BaseExplode createExplode(int x, int y, TankFrame tankFrame) {
-        return new Explode(x,y,tankFrame);
+        return null;
     }
 
     @Override

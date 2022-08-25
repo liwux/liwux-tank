@@ -1,7 +1,6 @@
 package com.liwux.tank;
 
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 public class ImageUtil {
     public static BufferedImage rotateImage(final BufferedImage bufferedimage,

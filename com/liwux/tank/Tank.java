@@ -1,17 +1,18 @@
 package com.liwux.tank;
 
-import com.liwux.tank.abstractfactory.BaseTank;
+import com.liwux.tank.strategy.FireStrategy;
+import com.liwux.tank.strategy.RandomFire;
 
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
-public class Tank extends BaseTank {
-    int x,y;
-    Dir dir = Dir.DOWN;
+public class Tank extends GameObject{
+    public int x,y;
+    public Dir dir = Dir.DOWN;
     private static final int speed = 5;
 
-    final TankFrame tf;
+    public GameModel gameModel;
 
     private boolean moving = true;
 
@@ -19,7 +20,7 @@ public class Tank extends BaseTank {
 
     private Random random = new Random();
 
-    Group group = Group.BAD;
+    public Group group = Group.BAD;
 
     public static int tankWidth = ResourceMgr.badTankD.getWidth();
     public static int tankHeight = ResourceMgr.badTankD.getHeight();
@@ -28,11 +29,11 @@ public class Tank extends BaseTank {
 
     Rectangle rectangle = new Rectangle();
 
-    public Tank(int x, int y,Dir dir,Group group,TankFrame tf) {
+    public Tank(int x, int y,Dir dir,Group group,GameModel gameModel) {
         this.x = x;
         this.y = y;
         this.dir = dir;
-        this.tf = tf;
+        this.gameModel = gameModel;
         this.group = group;
         rectangle.x = this.x;
         rectangle.y = this.y;
@@ -95,9 +96,10 @@ public class Tank extends BaseTank {
         this.moving = moving;
     }
 
+    @Override
     public void paint(Graphics g){
         if (!live) {
-            tf.tankList.remove(this);
+            gameModel.tankList.remove(this);
         };
         switch (dir){
             case LEFT:
@@ -147,8 +149,8 @@ public class Tank extends BaseTank {
     private void boundsChecks() {
         if (this.x <5 ) this.x = 5;
         if (this.y < 28) this.y = 28;
-        if (this.x > this.tf.getWidth()-Tank.tankWidth-2) x= tf.getWidth()-Tank.tankWidth-2;
-        if (this.y > this.tf.getHeight()-Tank.tankHeight-2) y= tf.getHeight()-Tank.tankHeight-2;
+        if (this.x > TankFrame.GAME_WIDTH-Tank.tankWidth-2) x= TankFrame.GAME_WIDTH-Tank.tankWidth-2;
+        if (this.y > TankFrame.GAME_HEIGHT-Tank.tankHeight-2) y= TankFrame.GAME_HEIGHT-Tank.tankHeight-2;
 
     }
 

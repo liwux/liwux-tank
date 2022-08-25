@@ -1,30 +1,16 @@
 package com.liwux.tank;
 
-import com.liwux.tank.abstractfactory.BaseExplode;
-import com.liwux.tank.abstractfactory.DefaultFactory;
-import com.liwux.tank.abstractfactory.GameFactory;
-
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TankFrame extends Frame {
 
     public static final int GAME_WIDTH = 1080,GAME_HEIGHT=960;
 
-    Tank myTank = new Tank(200,400,Dir.DOWN,Group.GOOD,this);
-
-    List<Bullet> bulletList = new ArrayList<>();
-
-    List<Tank> tankList = new ArrayList<>();
-    List<BaseExplode> explodeList = new ArrayList<>();
-    Explode e = new Explode(100,100,this);
-
-    GameFactory gameFactory = new DefaultFactory();
+    GameModel gameModel = new GameModel();
 
     public TankFrame() throws HeadlessException {
         setSize(GAME_WIDTH,GAME_HEIGHT);
@@ -60,31 +46,7 @@ public class TankFrame extends Frame {
 
     @Override
     public void paint(Graphics g) {
-        Color c = g.getColor();
-        g.setColor(Color.white);
-        g.drawString("子弹的数量："+ bulletList.size(),10,50);
-        g.drawString("敌人的数量："+ tankList.size(),10,80);
-        g.drawString("爆炸的数量："+ explodeList.size(),10,100);
-
-        g.setColor(c);
-
-        myTank.paint(g);
-        for (int i=0;i<bulletList.size();i++){
-            bulletList.get(i).paint(g);
-        }
-
-        for (int i=0;i<tankList.size();i++){
-            tankList.get(i).paint(g);
-        }
-        for (int i=0;i<explodeList.size();i++){
-            explodeList.get(i).paint(g);
-        }
-
-        for (int i=0;i<bulletList.size();i++){
-            for (int j=0;j<tankList.size();j++){
-                bulletList.get(i).collideWith(tankList.get(j));
-            }
-        }
+        gameModel.paint(g);
     }
 
     class MykeyListener extends KeyAdapter{
@@ -133,7 +95,7 @@ public class TankFrame extends Frame {
                     dU = false;
                     break;
                 case KeyEvent.VK_CONTROL:
-                   myTank.fire();
+                   gameModel.getMyTank().fire();
                     break;
                 default:
                     break;
@@ -143,6 +105,7 @@ public class TankFrame extends Frame {
         }
 
         private void setMainTankDir(){
+            Tank myTank = gameModel.getMyTank();
             if (!lU&&!uU&&!rU&&!dU) myTank.setMoving(false);
             else {
                 myTank.setMoving(true);

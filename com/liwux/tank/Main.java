@@ -1,18 +1,8 @@
 package com.liwux.tank;
 
-import java.util.Objects;
-
 public class Main {
     public static void main(String[] arg) throws InterruptedException {
         TankFrame tankFrame = new TankFrame();
-
-        int initTankCount = Integer.parseInt((String) Objects.requireNonNull(PropertyMgr.get("initTankCount")));
-
-        //初始化地方坦克
-        for (int i=0;i<initTankCount;i++){
-            tankFrame.tankList.add(new Tank(50+i*60,200,Dir.DOWN,Group.BAD,tankFrame));
-        }
-
 
         //背景音乐
         //new Thread(()->new Audio("audio/war1.wav").loop()).start();

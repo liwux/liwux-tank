@@ -5,7 +5,5 @@ bulletSpeed=10
 gameWidth=1080
 gameHeight=720
 #firestrategy
-goodFS=com.liwux.tank.RandomFire
-badFS=com.liwux.tank.DefualtFire
-goodFS=com.liwux.tank60.tank.RandomFire
-badFS=com.liwux.tank60.tank.DefualtFire
+goodFS=com.liwux.tank.strategy.RandomFire
+badFS=com.liwux.tank.strategy.DefualtFire

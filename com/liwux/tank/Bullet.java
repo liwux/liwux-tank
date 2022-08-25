@@ -1,10 +1,8 @@
 package com.liwux.tank;
 
-import com.liwux.tank.abstractfactory.BaseBullet;
-
 import java.awt.*;
 
-public class Bullet extends BaseBullet {
+public class Bullet extends GameObject{
     int x,y;
     Dir dir;
     private static final int speed = 10;
@@ -13,25 +11,27 @@ public class Bullet extends BaseBullet {
     private boolean live = true;
     Group group = Group.BAD;
 
-    final TankFrame tankFrame;
+    GameModel gameModel;
 
     Rectangle rectangle = new Rectangle();
 
-    public Bullet(int x, int y, Dir dir,Group group,TankFrame tankFrame) {
+    public Bullet(int x, int y, Dir dir, Group group, GameModel gameModel) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.tankFrame = tankFrame;
+        this.gameModel = gameModel;
         rectangle.x = this.x;
         rectangle.y = this.y;
         rectangle.width = bulletWidth;
         rectangle.height = bulletHeight;
+
+        gameModel.bulletList.add(this);
     }
-    @Override
+
     public void paint(Graphics g){
         if (!live) {
-            tankFrame.bulletList.remove(this);
+            gameModel.bulletList.remove(this);
         }
         switch (dir){
             case LEFT:
@@ -67,7 +67,7 @@ public class Bullet extends BaseBullet {
         }
         rectangle.x = this.x;
         rectangle.y = this.y;
-        if (x<0 || y <0 || x> TankFrame.GAME_WIDTH || y>TankFrame.GAME_HEIGHT) live = false;
+        if (x<0 || y <0 || x> TankFrame.GAME_WIDTH || y> TankFrame.GAME_HEIGHT) live = false;
     }
 
     public void collideWith(Tank tank) {
@@ -75,9 +75,9 @@ public class Bullet extends BaseBullet {
         if (rectangle.intersects(tank.rectangle)){
             tank.die();
             this.die();
-            int eX = tank.getX()+Tank.tankWidth/2-Explode.bulletWidth/2;
-            int eY = tank.getY()+Tank.tankHeight/2-Explode.bulletHeight/2;
-            tankFrame.explodeList.add(tankFrame.gameFactory.createExplode(eX,eY,tankFrame));
+            int eX = tank.getX()+ Tank.tankWidth/2- Explode.bulletWidth/2;
+            int eY = tank.getY()+ Tank.tankHeight/2- Explode.bulletHeight/2;
+            gameModel.explodeList.add(new Explode(eX,eY,gameModel));
         }
     }
 
