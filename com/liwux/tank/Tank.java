@@ -9,6 +9,7 @@ import java.util.Random;
 
 public class Tank extends GameObject{
     public int x,y;
+    int oldX,oldY;
     public Dir dir = Dir.DOWN;
     private static final int speed = 5;
 
@@ -123,6 +124,8 @@ public class Tank extends GameObject{
     }
 
     private void move(){
+        this.oldX = x;
+        this.oldY = y;
         if (!moving) return;
         switch (this.dir){
             case LEFT:
@@ -148,6 +151,12 @@ public class Tank extends GameObject{
 
         rectangle.x=this.x;
         rectangle.y=this.y;
+    }
+
+    public void back(){
+        this.x = oldX;
+        this.y = oldY;
+
     }
 
     private void boundsChecks() {
