@@ -26,12 +26,12 @@ public class Bullet extends GameObject{
         rectangle.width = bulletWidth;
         rectangle.height = bulletHeight;
 
-        gameModel.bulletList.add(this);
+        gameModel.add(this);
     }
 
     public void paint(Graphics g){
         if (!live) {
-            gameModel.bulletList.remove(this);
+            gameModel.remove(this);
         }
         switch (dir){
             case LEFT:

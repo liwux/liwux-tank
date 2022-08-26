@@ -99,7 +99,7 @@ public class Tank extends GameObject{
     @Override
     public void paint(Graphics g){
         if (!live) {
-            gameModel.tankList.remove(this);
+            gameModel.remove(this);
         };
         switch (dir){
             case LEFT:
