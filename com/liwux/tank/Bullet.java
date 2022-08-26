@@ -70,15 +70,17 @@ public class Bullet extends GameObject{
         if (x<0 || y <0 || x> TankFrame.GAME_WIDTH || y> TankFrame.GAME_HEIGHT) live = false;
     }
 
-    public void collideWith(Tank tank) {
-        if (this.group == tank.getGroup()) return;
+    public boolean collideWith(Tank tank) {
+        if (this.group == tank.getGroup()) return false;
         if (rectangle.intersects(tank.rectangle)){
             tank.die();
             this.die();
             int eX = tank.getX()+ Tank.tankWidth/2- Explode.bulletWidth/2;
             int eY = tank.getY()+ Tank.tankHeight/2- Explode.bulletHeight/2;
-            gameModel.explodeList.add(new Explode(eX,eY,gameModel));
+            gameModel.objects.add(new Explode(eX,eY,gameModel));
+            return true;
         }
+        return false;
     }
 
     private void die() {

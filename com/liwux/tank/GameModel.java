@@ -1,5 +1,10 @@
 package com.liwux.tank;
 
+import com.liwux.tank.chain.BulletTankCollider;
+import com.liwux.tank.chain.Collider;
+import com.liwux.tank.chain.ColliderChain;
+import com.liwux.tank.chain.TankTankCollider;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +13,7 @@ import java.util.Objects;
 public class GameModel {
     Tank myTank = new Tank(200,400, Dir.DOWN, Group.GOOD,this);
 
-    List<Bullet> bulletList = new ArrayList<>();
-
-    List<Tank> tankList = new ArrayList<>();
-    List<Explode> explodeList = new ArrayList<>();
+    ColliderChain chain = new ColliderChain();
 
     List<GameObject> objects = new ArrayList<>();
 
@@ -51,7 +53,7 @@ public class GameModel {
             for (int j=i+1;j<objects.size();j++){
                 GameObject o1 = objects.get(i);
                 GameObject o2 = objects.get(j);
-                Collider
+                chain.collider(o1,o2);
             }
         }
 

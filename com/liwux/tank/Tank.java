@@ -27,6 +27,10 @@ public class Tank extends GameObject{
 
     FireStrategy fs = new RandomFire();
 
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
+
     Rectangle rectangle = new Rectangle();
 
     public Tank(int x, int y,Dir dir,Group group,GameModel gameModel) {
@@ -165,5 +169,9 @@ public class Tank extends GameObject{
 
     public void die() {
         this.live = false;
+    }
+
+    public void stop() {
+        moving = false;
     }
 }
