@@ -1,10 +1,15 @@
 package com.liwux.tank;
 
+import com.liwux.tank.observer.TankFireEvent;
+import com.liwux.tank.observer.TankFireHandler;
+import com.liwux.tank.observer.TankFireObserver;
 import com.liwux.tank.strategy.FireStrategy;
 import com.liwux.tank.strategy.RandomFire;
 
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Tank extends GameObject{
@@ -189,5 +194,13 @@ public class Tank extends GameObject{
 
     public void stop() {
         moving = false;
+    }
+
+    private List<TankFireObserver> fireObserverList = Arrays.asList(new TankFireHandler());
+    public void handleFireKey(){
+        TankFireEvent event = new TankFireEvent(this);
+        for (TankFireObserver o:fireObserverList){
+            o.actionOnFire(event);
+        }
     }
 }
