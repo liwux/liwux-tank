@@ -19,7 +19,6 @@ public class GameModel {
 
     Tank myTank;
 
-
     public static GameModel getInstance(){
         return INSTANCE;
     }

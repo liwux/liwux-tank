@@ -23,6 +23,16 @@ public class Wall extends GameObject{
         g.setColor(c);
     }
 
+    @Override
+    public int getWidth() {
+        return w;
+    }
+
+    @Override
+    public int getHeight() {
+        return h;
+    }
+
     public Rectangle getRectangle() {
         return rectangle;
     }

@@ -3,7 +3,6 @@ package com.liwux.tank;
 import java.awt.*;
 
 public class Bullet extends GameObject{
-    int x,y;
     Dir dir;
     private static final int speed = 10;
     public static int bulletWidth = ResourceMgr.bulletD.getWidth();
@@ -47,6 +46,16 @@ public class Bullet extends GameObject{
         move();
     }
 
+    @Override
+    public int getWidth() {
+        return bulletWidth;
+    }
+
+    @Override
+    public int getHeight() {
+        return bulletHeight;
+    }
+
     private void move(){
         switch (this.dir){
             case LEFT:
@@ -72,8 +81,8 @@ public class Bullet extends GameObject{
         if (rectangle.intersects(tank.rectangle)){
             tank.die();
             this.die();
-            int eX = tank.getX()+ Tank.tankWidth/2- Explode.bulletWidth/2;
-            int eY = tank.getY()+ Tank.tankHeight/2- Explode.bulletHeight/2;
+            int eX = tank.getX()+ Tank.tankWidth/2- Explode.explodeWidth/2;
+            int eY = tank.getY()+ Tank.tankHeight/2- Explode.explodeHeight/2;
             GameModel.getInstance().objects.add(new Explode(eX,eY));
             return true;
         }

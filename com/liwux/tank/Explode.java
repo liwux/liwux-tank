@@ -5,9 +5,8 @@ import java.awt.*;
 public class Explode extends GameObject{
 
 
-    public static int bulletWidth = ResourceMgr.explodes[0].getWidth();
-    public static int bulletHeight = ResourceMgr.explodes[0].getHeight();
-    private int x,y;
+    public static int explodeWidth = ResourceMgr.explodes[0].getWidth();
+    public static int explodeHeight = ResourceMgr.explodes[0].getHeight();
 
     private int step = 0;
 
@@ -27,5 +26,15 @@ public class Explode extends GameObject{
             step = 0;
 
         }
+    }
+
+    @Override
+    public int getWidth() {
+        return explodeWidth;
+    }
+
+    @Override
+    public int getHeight() {
+        return explodeHeight;
     }
 }
