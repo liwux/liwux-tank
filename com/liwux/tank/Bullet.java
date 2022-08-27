@@ -11,27 +11,24 @@ public class Bullet extends GameObject{
     private boolean live = true;
     Group group = Group.BAD;
 
-    GameModel gameModel;
-
     public Rectangle rectangle = new Rectangle();
 
-    public Bullet(int x, int y, Dir dir, Group group, GameModel gameModel) {
+    public Bullet(int x, int y, Dir dir, Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.gameModel = gameModel;
         rectangle.x = this.x;
         rectangle.y = this.y;
         rectangle.width = bulletWidth;
         rectangle.height = bulletHeight;
 
-        gameModel.add(this);
+        GameModel.getInstance().add(this);
     }
 
     public void paint(Graphics g){
         if (!live) {
-            gameModel.remove(this);
+            GameModel.getInstance().remove(this);
         }
         switch (dir){
             case LEFT:
@@ -77,7 +74,7 @@ public class Bullet extends GameObject{
             this.die();
             int eX = tank.getX()+ Tank.tankWidth/2- Explode.bulletWidth/2;
             int eY = tank.getY()+ Tank.tankHeight/2- Explode.bulletHeight/2;
-            gameModel.objects.add(new Explode(eX,eY,gameModel));
+            GameModel.getInstance().objects.add(new Explode(eX,eY));
             return true;
         }
         return false;

@@ -13,8 +13,6 @@ public class Tank extends GameObject{
     public Dir dir = Dir.DOWN;
     private static final int speed = 5;
 
-    public GameModel gameModel;
-
     private boolean moving = true;
 
     private boolean live = true;
@@ -34,16 +32,16 @@ public class Tank extends GameObject{
 
     Rectangle rectangle = new Rectangle();
 
-    public Tank(int x, int y,Dir dir,Group group,GameModel gameModel) {
+    public Tank(int x, int y,Dir dir,Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
-        this.gameModel = gameModel;
         this.group = group;
         rectangle.x = this.x;
         rectangle.y = this.y;
         rectangle.width= tankWidth;
         rectangle.height=tankHeight;
+        GameModel.getInstance().add(this);
 
         if (group ==Group.BAD) {
             String badFS = (String) PropertyMgr.get("badFS");
@@ -104,7 +102,7 @@ public class Tank extends GameObject{
     @Override
     public void paint(Graphics g){
         if (!live) {
-            gameModel.remove(this);
+            GameModel.getInstance().remove(this);
         };
         switch (dir){
             case LEFT:
