@@ -11,6 +11,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class GameModel {
+    private static final GameModel INSTANCE = new GameModel();
+
+    private static GameModel getInstance(){
+        return INSTANCE;
+    }
+
     Tank myTank = new Tank(200,400, Dir.DOWN, Group.GOOD,this);
 
     ColliderChain chain = new ColliderChain();
@@ -22,8 +28,12 @@ public class GameModel {
 
         //初始化地方坦克
         for (int i=0;i<initTankCount;i++){
-            objects.add(new Tank(50+i*60,200, Dir.DOWN, Group.BAD,this));
+            add(new Tank(50+i*60,200, Dir.DOWN, Group.BAD,this));
         }
+        add(new Wall(150,150,200,50));
+        add(new Wall(550,150,200,50));
+        add(new Wall(300,300,50,200));
+        add(new Wall(550,300,50,200));
     }
 
     public void add(GameObject gameObject){

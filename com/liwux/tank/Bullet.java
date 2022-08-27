@@ -13,7 +13,7 @@ public class Bullet extends GameObject{
 
     GameModel gameModel;
 
-    Rectangle rectangle = new Rectangle();
+    public Rectangle rectangle = new Rectangle();
 
     public Bullet(int x, int y, Dir dir, Group group, GameModel gameModel) {
         this.x = x;
@@ -83,7 +83,7 @@ public class Bullet extends GameObject{
         return false;
     }
 
-    private void die() {
+     public void die() {
         this.live = false;
     }
 }
