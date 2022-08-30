@@ -28,7 +28,7 @@ public class Tank extends GameObject{
     public static int tankWidth = ResourceMgr.badTankD.getWidth();
     public static int tankHeight = ResourceMgr.badTankD.getHeight();
 
-    FireStrategy fs = new RandomFire();
+    FireStrategy fs;
 
     public Rectangle getRectangle() {
         return rectangle;

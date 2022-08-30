@@ -6,6 +6,7 @@ import com.liwux.tank.chain.ColliderChain;
 import com.liwux.tank.chain.TankTankCollider;
 
 import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -86,5 +87,39 @@ public class GameModel {
 
     public Tank getMyTank(){
         return myTank;
+    }
+
+    public void save(){
+        File file = new File("d:/tank.data");
+        try {
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
+            objectOutputStream.writeObject(myTank);
+            objectOutputStream.writeObject(objects);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void load() {
+        File file = new File("d:/tank.data");
+        ObjectInputStream objectInputStream =null;
+        try {
+            objectInputStream = new ObjectInputStream(new FileInputStream(file));
+            myTank = (Tank) objectInputStream.readObject();
+            objects = (List)objectInputStream.readObject();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }finally {
+            if (objectInputStream!=null){
+                try {
+                    objectInputStream.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 }
